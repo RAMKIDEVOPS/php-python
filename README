@@ -1,0 +1,41 @@
+Create a directory
+Create a directory to organize files by using following command
+
+$ mkdir php-docker-app  
+
+
+Docker Php application 1
+Create a Php File
+// index.php
+
+<?php  
+    echo ?Hello, Php?;  
+?>  
+Create a DockerFile
+// Dockefile
+
+FROM php:7.0-apache  
+COPY . /var/www/php  
+
+
+Docker Php application 2
+Create Docker Image
+$ docker build -t php-app .  
+
+
+Docker Php application 3
+Now look for the available images in the docker container.
+
+Docker Php application 4
+The above screen-shot shows that the created image php-app is available.
+
+Run the Docker image
+Now run the docker image. The following command is used to run docker images.
+
+$ docker run php-app  
+Docker Php application 5
+We can see that our docker image is running and output is shown to the browser. This image is running on the 172.17.0.2 ip.
+
+Output:
+
+Docker Php application 6
