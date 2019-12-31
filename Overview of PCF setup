@@ -1,0 +1,12 @@
+Database setup with app 
+-----------------------
+1. Create a manifest.yml with services defined with app-name
+2. Run Database service as User defined Service (cf cups command)
+3. Check the User provisioned service with command cf services
+4. Bind the Database information in the application by renedering "VCAP_SERVICES" which is environment varianble. This will eliminate hardcoding of credentials
+How to make an app run in PCF ?
+-------------------------------
+1. Create a manifest.yml with buildpack supporting the application stack. In this case of sample app, we have PHP and Python. So we have to provide both PHP and Python buildpacks in manifest.yml
+Since PHP buildpack executed python 2 and python buildpack relies on python 3, there would be a conflict to run both buildpacks in PCF. So better to run PHP and Python buildpacks as separate droplets and connect the application with API
+So we would be using 2 manifest files. 1 for PHP and 1 for Python. 2 droplets with 2 CF pushes.
+2. 
